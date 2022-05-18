@@ -1,7 +1,6 @@
 package com.saucedemo.testing.tests;
 
-import com.saucedemo.testing.pages.LoginPage;
-import com.saucedemo.testing.pages.ProductsListPage;
+import com.saucedemo.testing.pages.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,7 +13,10 @@ public class BaseTest {
 
     private WebDriver driver;
     protected LoginPage loginPage;
-    protected ProductsListPage productPage;
+    protected ProductsListPage productListPage;
+    protected CartPage cartPage;
+    protected ProductPage productPage;
+    protected YourInformationPage yourInfoPage;
 
     @BeforeMethod
     public void setUp(){
@@ -23,11 +25,11 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         loginPage = new LoginPage(driver);
-        productPage = new ProductsListPage(driver);
+        productListPage = new ProductsListPage(driver);
+        cartPage = new CartPage(driver);
+        productPage = new ProductPage(driver);
+        yourInfoPage = new YourInformationPage(driver);
     }
 
-    @AfterMethod
-    public void closeBrowser(){
-        driver.quit();
-    }
+
 }

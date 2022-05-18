@@ -10,7 +10,7 @@ public class TestLogin extends BaseTest {
     public void testSuccessLogin(){
         loginPage.openPage();
         loginPage.loginWithDefaultUser();
-        Assert.assertEquals(productPage.getPagetitle(),"PRODUCTS");
+        Assert.assertEquals(productListPage.getPagetitle(),"PRODUCTS");
     }
 
     @Test

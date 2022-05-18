@@ -42,6 +42,7 @@ public class LoginPage extends BasePage{
     }
 
     public String getErrorMessage(){
+
         return driver.findElement(errorMessage).getText();
     }
 
@@ -51,10 +52,12 @@ public class LoginPage extends BasePage{
     }
 
     public ProductsListPage loginWithDefaultUser(){
+
         return login(STANDARD_USER, DEFAULT_PASSWORD);
     }
 
     public ProductsListPage loginWithLockedtUser(){
+
         return login(LOCKED_USER, DEFAULT_PASSWORD);
     }
 
